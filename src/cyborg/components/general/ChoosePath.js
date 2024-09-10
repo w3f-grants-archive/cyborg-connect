@@ -23,7 +23,7 @@ function ChoosePath() {
       <div className="flex">
         <Button
           onClick={() => {
-            return /*setPath('provide-compute')*/
+            return setPath('provide-compute')
           }}
           variation="inactive"
           additionalClasses={'relative'}

@@ -1,15 +1,15 @@
 import React from 'react'
 import cyberdock from '../../../../public/assets/icons/cyberdock.png'
 import comingsoon from '../../../../public/assets/icons/comingsoon.png'
-import UploadDockerImgURL from './modals/UploadDockerImgURL.js'
 import ServiceCard from './ServiceCard'
+import ActionPendingModal from '../general/modals/ActionPendingModal'
 import {
   DEPLOY_STATUS,
   useCyborgState,
   useCyborg,
   SERVICES,
 } from '../../CyborgContext'
-import LoadDeployCyberDock from './modals/LoadDeployCyberDock'
+import UploadDockerImgURL from './modals/UploadDockerImgURL'
 
 function ChooseServices() {
   const { serviceStatus, service } = useCyborgState()
@@ -40,7 +40,7 @@ function ChooseServices() {
       )}
       {serviceStatus.deployTask === DEPLOY_STATUS.PENDING &&
       service === SERVICES.CYBER_DOCK ? (
-        <LoadDeployCyberDock />
+        <ActionPendingModal text="Deploying sour sontainer securely!" />
       ) : (
         <></>
       )}
